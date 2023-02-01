@@ -1,0 +1,23 @@
+.bill-page-header {
+   width: 100%;
+   position: relative;
+
+   input::placeholder {
+      text-align: center;
+   }
+   #bill-id {
+      width: calc(5%);
+   }
+   #bill-room {
+      width: calc(10%);
+   }
+   #bill-customer {
+      width: calc(15%);
+   }
+   button {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+   }
+}

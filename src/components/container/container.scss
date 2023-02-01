@@ -1,0 +1,36 @@
+@import "../../App.scss";
+
+.container {
+   background-color: #fff;
+   border-radius: 3px;
+   overflow: hidden;
+   box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+   &__header {
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+   }
+   &__title {
+      padding: 10px;
+      background-color: red;
+   }
+
+   &__btn-group {
+      padding: 10px 10px 0 10px;
+      display: flex;
+      justify-content: flex-end;
+   }
+
+   &__body {
+      display: flex;
+   }
+
+   &__body > div {
+      flex: 1;
+   }
+
+   &__footer {
+      height: 50px;
+   }
+}

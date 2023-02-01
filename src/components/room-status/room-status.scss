@@ -1,0 +1,114 @@
+.room-status {
+   width: 300px;
+   height: 200px;
+   border-radius: 10px;
+   box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px,
+      rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+   display: flex;
+   flex-direction: column;
+   justify-content: flex-end;
+   position: relative;
+   overflow: hidden;
+   cursor: pointer;
+
+   &__header {
+      display: flex;
+      flex-direction: column;
+      .top-bottom {
+         display: flex;
+         justify-content: space-between;
+         margin-top: 50px;
+      }
+   }
+
+   &__room-number {
+      position: absolute;
+      left: 10px;
+      top: 10px;
+      font-size: 30px;
+      font-weight: 600;
+   }
+
+   &__total-time {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      font-weight: 600;
+   }
+
+   &__status-icons {
+      position: absolute;
+      top: 50%;
+      left: 10px;
+      font-size: 40px;
+      color: red;
+      transform: translateY(-50%);
+   }
+
+   //Display: date and time
+   &__time-stay {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      top: 10px;
+      left: 50%;
+      transform: translateX(-50%);
+      > div {
+         width: 100%;
+         display: flex;
+         // gap: 5px 5px;
+         align-items: center;
+         justify-content: space-between;
+         > div {
+            width: 44px;
+            text-align: center;
+         }
+      }
+   }
+
+   &__time-total {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      text-align: end;
+   }
+
+   // Part Body
+   &__body {
+      height: 80px;
+      display: flex;
+      gap: 10px;
+      justify-content: center;
+      align-items: center;
+      font-size: 25px;
+   }
+   &__prepay {
+      color: green;
+   }
+
+   &__footer {
+      display: flex;
+      justify-content: space-between;
+      .group-color {
+         margin: 5px;
+         height: 40px;
+         width: 40px;
+         border-radius: 50%;
+         border: 0.5px solid red;
+      }
+   }
+   &__setting {
+      width: 50px;
+      height: 50px;
+      display: flex;
+      font-size: 30px;
+      position: relative;
+   }
+   &__setting > :first-child {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+   }
+}

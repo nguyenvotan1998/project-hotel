@@ -1,0 +1,52 @@
+.check-out {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   > div:not(.service) {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 50px;
+   }
+   .service {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      &__label {
+         width: 100px;
+      }
+      &__name {
+         width: 100px;
+         text-align: center;
+         font-size: 14px;
+         border: none;
+      }
+      p.service__name {
+         text-align: start;
+         padding-left: 10px;
+      }
+      p.service__number {
+         text-align: start;
+         padding-left: 8px;
+      }
+      &__number {
+         width: 40px;
+         font-size: 14px;
+         text-align: center;
+         border: none;
+      }
+      &__btn {
+         font-size: 25px;
+      }
+   }
+   .price {
+      width: 90px;
+      display: flex;
+      justify-content: flex-end;
+   }
+}
+
+.display {
+   display: flex;
+   gap: 10px;
+}

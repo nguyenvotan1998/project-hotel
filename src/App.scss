@@ -1,0 +1,102 @@
+// color variable
+$btn--color: #ff7000;
+$border-container--color: rgb(212, 212, 212);
+$bg-container--color: #fff;
+$bg-page--color: #fff8d8;
+
+.app {
+   width: 100%;
+   min-height: 100vh;
+   display: flex;
+   .main {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+      .content {
+         flex-grow: 1;
+      }
+   }
+}
+
+.page {
+   background-color: $bg-page--color;
+   padding: 10px 20px;
+   display: flex;
+   flex-direction: column;
+   overflow: auto;
+   height: 100%;
+}
+
+.page > :not(:first-child) {
+   margin-top: 10px;
+}
+
+// Common style for button
+.btn {
+   border: none;
+   background-color: $btn--color;
+   color: #fff;
+   border-radius: 5px;
+   padding: 10px 20px;
+   cursor: pointer;
+}
+
+.icon {
+   cursor: pointer;
+}
+
+// Table Component -- Display List get API
+table {
+   width: 100%;
+   border: 1px solid red;
+   border-spacing: 0;
+   th {
+      border: 1px solid red;
+   }
+   td {
+      border: 1px solid red;
+      text-align: center;
+   }
+}
+
+.form {
+   color: #000;
+   display: flex;
+   flex-direction: column;
+}
+
+label {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   color: black;
+}
+
+input,
+select {
+   height: 30px;
+   padding: 0 5px;
+   border: 1px solid #cccccc;
+   border-radius: 5px;
+   background-color: #ecebeb;
+}
+
+.radio {
+   display: flex;
+}
+.radio > label > input {
+   margin-left: 10px;
+}
+.radio > :not(:first-child) {
+   margin-left: 30px;
+}
+
+@media only screen and (max-width: 1265px) {
+   .sidebar {
+      display: none;
+   }
+   .room-status-container {
+      display: flex;
+      flex-wrap: wrap;
+   }
+}

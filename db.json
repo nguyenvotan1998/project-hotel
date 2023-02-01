@@ -1,0 +1,217 @@
+{
+  "floors": [
+    {
+      "name": "Lầu 1",
+      "id": 1
+    },
+    {
+      "name": "Lầu 2",
+      "id": 2
+    },
+    {
+      "name": "Lầu 3",
+      "id": 3
+    },
+    {
+      "name": "Lầu 4",
+      "id": 4
+    }
+  ],
+  "room-types": [
+    {
+      "name": "Nhỏ",
+      "id": 1
+    },
+    {
+      "name": "Trung",
+      "id": 2
+    },
+    {
+      "name": "Lớn",
+      "id": 3
+    }
+  ],
+  "rooms": [
+    {
+      "room": "101",
+      "floor": "Lầu 1",
+      "type": "Nhỏ",
+      "numberBed": 1,
+      "numberPeople": 2,
+      "id": 1
+    },
+    {
+      "room": "102",
+      "floor": "Lầu 1",
+      "type": "Trung",
+      "numberBed": 1,
+      "numberPeople": 2,
+      "id": 2
+    },
+    {
+      "room": "103",
+      "floor": "Lầu 1",
+      "type": "Lớn",
+      "numberBed": 1,
+      "numberPeople": 2,
+      "id": 3
+    },
+    {
+      "room": "201",
+      "floor": "Lầu 2",
+      "type": "Nhỏ",
+      "numberBed": 1,
+      "numberPeople": 2,
+      "id": 4
+    },
+    {
+      "room": "202",
+      "floor": "Lầu 2",
+      "type": "Trung",
+      "numberBed": 1,
+      "numberPeople": 2,
+      "id": 5
+    },
+    {
+      "room": "203",
+      "floor": "Lầu 2",
+      "type": "Lớn",
+      "numberBed": 1,
+      "numberPeople": 2,
+      "id": 6
+    }
+  ],
+  "customers": [],
+  "room-status": [
+    {
+      "room": "101",
+      "status": "empty",
+      "id": 1
+    },
+    {
+      "room": "102",
+      "status": "empty",
+      "id": 2
+    },
+    {
+      "room": "103",
+      "status": "empty",
+      "id": 3
+    },
+    {
+      "room": "201",
+      "status": "empty",
+      "id": 4
+    },
+    {
+      "room": "202",
+      "status": "empty",
+      "id": 5
+    },
+    {
+      "room": "203",
+      "status": "empty",
+      "id": 6
+    }
+  ],
+  "room-prices": [
+    {
+      "type": "Nhỏ",
+      "method": "Giờ",
+      "early": null,
+      "price": "100000",
+      "late": "40000",
+      "id": 1
+    },
+    {
+      "type": "Trung",
+      "method": "Giờ",
+      "early": null,
+      "price": "120000",
+      "late": "40000",
+      "id": 2
+    },
+    {
+      "type": "Lớn",
+      "method": "Giờ",
+      "early": null,
+      "price": "140000",
+      "late": "40000",
+      "id": 3
+    }
+  ],
+  "bills": [
+    {
+      "room": "101",
+      "method": "hours",
+      "dateIn": "2023-01-18",
+      "hourIn": "13:53",
+      "dateOut": "2023-01-18",
+      "hourOut": "14:06",
+      "prepay": "80000",
+      "prePayment": "cash",
+      "note": "",
+      "customer": "Võ Tấn Nguyên",
+      "totalHour": "00:13",
+      "totalDate": "00/00",
+      "roomPrice": 60000,
+      "services": [
+        {
+          "name": "Nước ngọt",
+          "number": "1",
+          "price": 15000
+        },
+        {
+          "name": "Nước suối",
+          "number": "1",
+          "price": 15000
+        }
+      ],
+      "servicePrice": 30000,
+      "totalPrice": 10000,
+      "dateBill": "14:06",
+      "id": 1
+    },
+    {
+      "room": "101",
+      "method": "hours",
+      "dateIn": "2023-01-21",
+      "hourIn": "18:52",
+      "dateOut": "2023-01-21",
+      "hourOut": "21:09",
+      "prepay": "",
+      "prePayment": "",
+      "note": "",
+      "customer": "Võ Tấn Nguyên",
+      "services": [
+        {
+          "name": "Nước suối",
+          "number": "1",
+          "price": 10000
+        },
+        {
+          "name": "Nước ngọt",
+          "number": "1",
+          "price": 10000
+        }
+      ],
+      "totalHour": "02:17",
+      "totalDate": "00/00",
+      "servicePrice": 20000,
+      "dateBill": "21:09",
+      "id": 2
+    }
+  ],
+  "services": [
+    {
+      "id": 1,
+      "name": "Nước ngọt",
+      "price": 15000
+    },
+    {
+      "id": 2,
+      "name": "Nước suối",
+      "price": 10000
+    }
+  ]
+}

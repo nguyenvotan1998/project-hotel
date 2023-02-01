@@ -1,0 +1,44 @@
+@import "../../App.scss";
+.list {
+   margin: 10px;
+   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+   &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px;
+   }
+
+   &__content {
+      display: flex;
+   }
+}
+
+.form {
+   display: flex;
+   flex-direction: column;
+   gap: 10px;
+   .radio-sex {
+      display: flex;
+      justify-content: space-between;
+   }
+   .input {
+      > select,
+      input {
+         width: 50%;
+         text-align: center;
+      }
+   }
+
+   .input.radio {
+      display: flex;
+      align-items: center;
+      > p {
+         width: 50%;
+      }
+      > div {
+         width: 50%;
+         display: flex;
+      }
+   }
+}
