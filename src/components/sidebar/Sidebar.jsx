@@ -7,13 +7,7 @@ import { BiBed } from "react-icons/bi";
 import { IoIosArrowUp } from "react-icons/io";
 import { IoIosArrowDown } from "react-icons/io";
 
-import {
-   Outlet,
-   NavLink,
-   useLoaderData,
-   Form,
-   redirect,
-} from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 function Sidebar() {
    const [open, setOpen] = useState({
