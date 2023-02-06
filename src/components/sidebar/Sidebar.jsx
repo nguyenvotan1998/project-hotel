@@ -36,7 +36,7 @@ function Sidebar() {
                >
                   <RxDashboard />
                   Home
-                  {open.home ? <IoIosArrowUp /> : <IoIosArrowDown />}
+                  {/* {open.home ? <IoIosArrowUp /> : <IoIosArrowDown />} */}
                </NavLink>
             </li>
             <li className="item-link">
@@ -53,20 +53,18 @@ function Sidebar() {
                   Room
                   {open.room ? <IoIosArrowUp /> : <IoIosArrowDown />}
                </NavLink>
-               <ul
-                  className={
-                     open.room ? "sub-menu-lv2 open" : "sub-menu-lv2 hidden"
-                  }
-               >
-                  <li>
-                     <NavLink to={`/rooms/room-information`}>
-                        Information
-                     </NavLink>
-                  </li>
-                  <li>
-                     <NavLink to={`/rooms/room-prices`}>Prices</NavLink>
-                  </li>
-               </ul>
+               {open.room && (
+                  <ul className="list-link-lv2">
+                     <li>
+                        <NavLink to={`/rooms/room-information`}>
+                           Information
+                        </NavLink>
+                     </li>
+                     <li>
+                        <NavLink to={`/rooms/room-prices`}>Prices</NavLink>
+                     </li>
+                  </ul>
+               )}
             </li>
             <li className="item-link">
                <NavLink
@@ -83,27 +81,25 @@ function Sidebar() {
                   Customer
                   {open.customer ? <IoIosArrowUp /> : <IoIosArrowDown />}
                </NavLink>
-               <ul
-                  className={
-                     open.customer ? "sub-menu-lv2 open" : "sub-menu-lv2 hidden"
-                  }
-               >
-                  <li>
-                     <NavLink to={`/customers/`}>List</NavLink>
-                  </li>
-                  <li>
-                     <NavLink to={`/customers/revenue`}>Revenue</NavLink>
-                  </li>
-                  <li>
-                     <NavLink to={`/customers/blacklist`}>Blacklist</NavLink>
-                  </li>
-                  <li>
-                     <NavLink to={`/customers/promotion`}>Promotion</NavLink>
-                  </li>
-                  <li>
-                     <NavLink to={`/customers/birthday`}>Birthday</NavLink>
-                  </li>
-               </ul>
+               {open.customer && (
+                  <ul className="list-link-lv2">
+                     <li>
+                        <NavLink to={`/customers/`}>List</NavLink>
+                     </li>
+                     <li>
+                        <NavLink to={`/customers/revenue`}>Revenue</NavLink>
+                     </li>
+                     <li>
+                        <NavLink to={`/customers/blacklist`}>Blacklist</NavLink>
+                     </li>
+                     <li>
+                        <NavLink to={`/customers/promotion`}>Promotion</NavLink>
+                     </li>
+                     <li>
+                        <NavLink to={`/customers/birthday`}>Birthday</NavLink>
+                     </li>
+                  </ul>
+               )}
             </li>
             <li className="item-link">
                <NavLink
@@ -117,6 +113,21 @@ function Sidebar() {
                >
                   <RxDashboard />
                   Bill
+                  {open.bill ? <IoIosArrowUp /> : <IoIosArrowDown />}
+               </NavLink>
+            </li>
+            <li className="item-link">
+               <NavLink
+                  to={`/bills`}
+                  className={({ isActive, isPending }) =>
+                     isActive ? "active" : isPending ? "pending" : ""
+                  }
+                  onClick={() =>
+                     setOpen((prev) => ({ ...prev, bill: !open.bill }))
+                  }
+               >
+                  <RxDashboard />
+                  Report
                   {open.bill ? <IoIosArrowUp /> : <IoIosArrowDown />}
                </NavLink>
             </li>

@@ -1,0 +1,32 @@
+.widget {
+   display: flex;
+   justify-content: space-between;
+   padding: 20px;
+   box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+   border-radius: 10px;
+
+   &__left,
+   &__right {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 20px;
+   }
+
+   &__right {
+      align-items: center;
+   }
+
+   &__title {
+   }
+
+   &__counter {
+      font-size: 33px;
+      font-weight: 600;
+   }
+
+   &__icon {
+      font-size: 40px;
+      display: flex;
+   }
+}

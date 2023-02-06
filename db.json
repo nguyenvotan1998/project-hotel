@@ -81,12 +81,58 @@
       "id": 6
     }
   ],
-  "customers": [],
+  "customers": [
+    {
+      "name": "Võ Tấn Nguyên",
+      "card": "0968578108",
+      "phone": "0968578108",
+      "address": "627 Xô Viết Nghệ Tĩnh",
+      "sex": "Male",
+      "birthday": "2023-02-02",
+      "id": 1
+    },
+    {
+      "name": "Nguyễn Văn Thiên Long",
+      "sex": "Male",
+      "card": "070201001652",
+      "phone": "0947387299",
+      "address": "Tổ 2, Thanh Tân, Thanh Lương, Bình Long, Bình Phước",
+      "birthday": "21/07/2001",
+      "id": 2
+    },
+    {
+      "name": "Nguyễn Văn Lâm",
+      "sex": "Male",
+      "card": "290997154",
+      "phone": "0383729102",
+      "address": "Sân Bay, Tân Phong, Tân Biên, Tây Ninh",
+      "birthday": "15/02/1992",
+      "id": 3
+    },
+    {
+      "name": "Lâm Thanh Tùng",
+      "sex": "Male",
+      "card": "096079009560",
+      "phone": "0282379373",
+      "address": "Khóm 2, Phường 9, Cà Mau, Cà Mau",
+      "birthday": "12/02/1979",
+      "id": 4
+    }
+  ],
   "room-status": [
     {
       "room": "101",
-      "status": "empty",
-      "id": 1
+      "status": "using",
+      "id": 1,
+      "method": "hours",
+      "dateIn": "2023-02-05",
+      "hourIn": "07:39",
+      "dateOut": "2023-02-05",
+      "hourOut": "12:00",
+      "prepay": "",
+      "prePayment": "",
+      "note": "",
+      "customer": "Võ Tấn Nguyên"
     },
     {
       "room": "102",

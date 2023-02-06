@@ -1,6 +1,15 @@
 import "./check-in.scss";
-import { useEffect, useState, useRef, useMemo, useCallback } from "react";
+import {
+   useEffect,
+   useState,
+   useRef,
+   useMemo,
+   useCallback,
+   startTransition,
+   useTransition,
+} from "react";
 import Modal from "../../modal/Modal";
+import useFetch from "../../hooks/useFetch";
 import CustomerInfo from "./CustomerInfo";
 import RoomInfo from "./RoomInfo";
 import { timeNow, dateNow, tomorrow } from "../../../script";
@@ -157,6 +166,7 @@ export default function CheckIn(props) {
                      userRef={userRef}
                      cusInfo={cusInfo}
                      alert={alert}
+                     setCusInfo={setCusInfo}
                      handleClose={handleClose}
                      updateCusInfo={updateCusInfo}
                   />

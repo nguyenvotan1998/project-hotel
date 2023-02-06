@@ -1,10 +1,58 @@
 import "./check-in.scss";
-import { memo, useLayoutEffect } from "react";
+import {
+   React,
+   memo,
+   useLayoutEffect,
+   useTransition,
+   useMemo,
+   useState,
+} from "react";
+import useFetch from "../../hooks/useFetch";
 import Alert from "@mui/material/Alert";
 import Snackbar from "@mui/material/Snackbar";
+import { responsivePropType } from "@mui/system";
+
+function SuggestCustomerItem(props) {
+   const handleSuggestCustomer = () => {
+      props.setCusInfo(props.customer);
+   };
+
+   console.log(props);
+   return (
+      <div className="suggest-customer-item" onClick={handleSuggestCustomer}>
+         <p>
+            {props.id} - {props.name}
+         </p>
+         <p>CMND: {props.card}</p>
+      </div>
+   );
+}
+
+function SuggestCustomerList(props) {
+   return <div className="suggest-customer-list">{props.child}</div>;
+}
 
 function CustomerInfo(props) {
-   console.log(props.cusInfo.phone);
+   const { data, loading, error } = useFetch("http://localhost:8000/customers");
+   const [inputCustomerName, setInputCustomerName] = useState();
+   const [filterText, setFilterText] = useState();
+   const [isPending, startTransition] = useTransition();
+
+   const suggest = useMemo(() => {
+      return data?.filter((res) =>
+         res.name.includes(filterText) ? res : null
+      );
+   }, [filterText]);
+
+   const handleSuggestCustomer = (e) => {
+      setInputCustomerName(e.target.value);
+      startTransition(() => {
+         setFilterText(e.target.value);
+      });
+   };
+
+   console.log(suggest);
+   console.log(props.setCusInfo);
 
    // const handleFocus = (e) => {
    //    if (!onlyDigits(props.cusInfo.phone)) {
@@ -23,6 +71,11 @@ function CustomerInfo(props) {
       }
       e.target.style.color = "blue";
    };
+
+   // const handleClickSuggest = (res) => {
+   //    props.setCusInfo({ res });
+   // };
+
    return (
       <div className="container-cus-info">
          <span>Thông tin khách hàng</span>
@@ -33,8 +86,20 @@ function CustomerInfo(props) {
                name="name"
                placeholder="Tên khách hàng"
                ref={props.userRef}
-               value={props.cusInfo.name}
-               onChange={props.updateCusInfo}
+               value={inputCustomerName}
+               onChange={handleSuggestCustomer}
+            />
+            <SuggestCustomerList
+               child={suggest?.map((res) => (
+                  <SuggestCustomerItem
+                     key={res.id}
+                     id={res.id}
+                     name={res.name}
+                     card={res.card}
+                     customer={res}
+                     setCusInfo={props.setCusInfo}
+                  />
+               ))}
             />
             <input
                id="cusCard"

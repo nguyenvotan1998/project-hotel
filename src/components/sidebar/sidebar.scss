@@ -56,6 +56,12 @@
             }
          }
       }
+      // .item-link > a {
+      //    transition: color 2s ease-in;
+      // }
+      // .item-link > a:active {
+      //    color: blue;
+      // }
    }
 }
 ul {
@@ -79,13 +85,22 @@ a {
    color: $btn--color;
 }
 .open {
+   opacity: 1;
    display: block;
+   // transition: opacity 2s linear;
 }
 
 .hidden {
    display: none;
+   opacity: 0;
 }
 
 .sub-menu-lv2 {
+   font-size: 16px;
+   animation-name: dropdown;
+   animation-duration: 2s;
+   animation-timing-function: linear;
+}
+.list-link-lv2 {
    font-size: 16px;
 }
