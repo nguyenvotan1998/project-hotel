@@ -15,9 +15,9 @@ import { responsivePropType } from "@mui/system";
 function SuggestCustomerItem(props) {
    const handleSuggestCustomer = () => {
       props.setCusInfo(props.customer);
+      props.setIsSuggest(false);
    };
 
-   console.log(props);
    return (
       <div className="suggest-customer-item" onClick={handleSuggestCustomer}>
          <p>
@@ -34,7 +34,7 @@ function SuggestCustomerList(props) {
 
 function CustomerInfo(props) {
    const { data, loading, error } = useFetch("http://localhost:8000/customers");
-   const [inputCustomerName, setInputCustomerName] = useState();
+   const [isSuggest, setIsSuggest] = useState(true);
    const [filterText, setFilterText] = useState();
    const [isPending, startTransition] = useTransition();
 
@@ -45,36 +45,17 @@ function CustomerInfo(props) {
    }, [filterText]);
 
    const handleSuggestCustomer = (e) => {
-      setInputCustomerName(e.target.value);
+      props.updateCusInfo(e);
       startTransition(() => {
          setFilterText(e.target.value);
       });
    };
-
-   console.log(suggest);
-   console.log(props.setCusInfo);
-
-   // const handleFocus = (e) => {
-   //    if (!onlyDigits(props.cusInfo.phone)) {
-   //       e.target.style.color = "red";
-   //    }
-   // };
-   // useLayoutEffect(
-   //    (e) => {
-   //       handleFocus(e);
-   //    },
-   //    [props.cusInfo.phone]
-   // );
 
    const handleNotFocus = (e) => {
       if (props.cusInfo.phone) {
       }
       e.target.style.color = "blue";
    };
-
-   // const handleClickSuggest = (res) => {
-   //    props.setCusInfo({ res });
-   // };
 
    return (
       <div className="container-cus-info">
@@ -86,21 +67,24 @@ function CustomerInfo(props) {
                name="name"
                placeholder="Tên khách hàng"
                ref={props.userRef}
-               value={inputCustomerName}
+               value={props.cusInfo.name}
                onChange={handleSuggestCustomer}
             />
-            <SuggestCustomerList
-               child={suggest?.map((res) => (
-                  <SuggestCustomerItem
-                     key={res.id}
-                     id={res.id}
-                     name={res.name}
-                     card={res.card}
-                     customer={res}
-                     setCusInfo={props.setCusInfo}
-                  />
-               ))}
-            />
+            {isSuggest && (
+               <SuggestCustomerList
+                  child={suggest?.map((res) => (
+                     <SuggestCustomerItem
+                        key={res.id}
+                        id={res.id}
+                        name={res.name}
+                        card={res.card}
+                        customer={res}
+                        setCusInfo={props.setCusInfo}
+                        setIsSuggest={setIsSuggest}
+                     />
+                  ))}
+               />
+            )}
             <input
                id="cusCard"
                type="text"
